@@ -4,8 +4,10 @@
     {
         OnnxModel OnnxModel { get; }
 
+        /*
         public event EventHandler VideoStatusEvent;
         public event EventHandler VideoProgressEvent;
         public event EventHandler VideoCompleteEvent;
+        */
     }
 }
