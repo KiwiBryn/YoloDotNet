@@ -9,10 +9,11 @@
     /// <param name="gpuId">The GPU device ID to use when CUDA is enabled.</param>
     public class YoloCore(string onnxModel, bool useCuda, bool allocateGpuMemory, int gpuId) : IDisposable
     {
+        /*
         public event EventHandler VideoStatusEvent = delegate { };
         public event EventHandler VideoProgressEvent = delegate { };
         public event EventHandler VideoCompleteEvent = delegate { };
-
+        */
         private bool _isDisposed;
 
         private InferenceSession _session = default!;
@@ -91,6 +92,7 @@
             }
         }
 
+         /*
         /// <summary>
         /// Runs inference on video data using the specified options and optional thresholds.
         /// Triggers events for progress, completion, and status changes during video processing.
@@ -191,6 +193,7 @@
 
             tmpImage.Save(savePath, SKEncodedImageFormat.Png, 100);
         }
+        */
 
         /// <summary>
         /// Removes overlapping bounding boxes in a list of object detection results.
