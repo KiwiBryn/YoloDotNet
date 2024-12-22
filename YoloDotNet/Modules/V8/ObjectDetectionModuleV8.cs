@@ -28,7 +28,9 @@
             _channels3 = _channels * 3;
             _channels4 = _channels * 4;
 
+            /*
             SubscribeToVideoEvents();
+            */
         }
 
         public List<ObjectDetection> ProcessImage(SKImage image, double confidence, double pixelConfidence, double iou)
@@ -42,8 +44,10 @@
             return [..results];
         }
 
+        /*
         public Dictionary<int, List<ObjectDetection>> ProcessVideo(VideoOptions options, double confidence, double pixelConfidence, double iou)
             => _yoloCore.RunVideo(options, confidence, pixelConfidence, iou, ProcessImage);
+        */
 
         #region Helper methods
 
@@ -134,18 +138,22 @@
             }
         }
 
+        /*
         private void SubscribeToVideoEvents()
         {
             _yoloCore!.VideoProgressEvent += (sender, e) => VideoProgressEvent?.Invoke(sender, e);
             _yoloCore.VideoCompleteEvent += (sender, e) => VideoCompleteEvent?.Invoke(sender, e);
             _yoloCore.VideoStatusEvent += (sender, e) => VideoStatusEvent?.Invoke(sender, e);
         }
+        */
 
         public void Dispose()
         {
+            /*
             VideoProgressEvent -= (sender, e) => VideoProgressEvent?.Invoke(sender, e);
             VideoCompleteEvent -= (sender, e) => VideoCompleteEvent?.Invoke(sender, e);
             VideoStatusEvent -= (sender, e) => VideoStatusEvent?.Invoke(sender, e);
+            */
 
             _yoloCore?.Dispose();
 

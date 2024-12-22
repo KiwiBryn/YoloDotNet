@@ -15,7 +15,9 @@
         {
             _yoloCore = yoloCore;
             _objectDetectionModule = new ObjectDetectionModuleV8(_yoloCore);
+            /*
             SubscribeToVideoEvents();
+            */
         }
 
         public List<PoseEstimation> ProcessImage(SKImage image, double confidence, double pixelConfidence, double iou)
@@ -26,8 +28,10 @@
             return PoseEstimateImage(image, ortSpan, confidence, iou);
         }
 
+        /*
         public Dictionary<int, List<PoseEstimation>> ProcessVideo(VideoOptions options, double confidence, double pixelConfidence, double iou)
             => _yoloCore.RunVideo(options, confidence, pixelConfidence, iou, ProcessImage);
+        */
 
         #region Helper methods
 
@@ -67,18 +71,22 @@
             return [.. boxes.Select(x => (PoseEstimation)x)];
         }
 
+        /*
         private void SubscribeToVideoEvents()
         {
             _yoloCore.VideoProgressEvent += (sender, e) => VideoProgressEvent?.Invoke(sender, e);
             _yoloCore.VideoCompleteEvent += (sender, e) => VideoCompleteEvent?.Invoke(sender, e);
             _yoloCore.VideoStatusEvent += (sender, e) => VideoStatusEvent?.Invoke(sender, e);
         }
+        */
 
         public void Dispose()
         {
+            /*
             _yoloCore.VideoProgressEvent -= (sender, e) => VideoProgressEvent?.Invoke(sender, e);
             _yoloCore.VideoCompleteEvent -= (sender, e) => VideoCompleteEvent?.Invoke(sender, e);
             _yoloCore.VideoStatusEvent -= (sender, e) => VideoStatusEvent?.Invoke(sender, e);
+            */
 
             _yoloCore?.Dispose();
 
