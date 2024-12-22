@@ -1,4 +1,5 @@
-﻿namespace YoloDotNet.VideoHandler
+﻿/*
+namespace YoloDotNet.VideoHandler
 {
     public partial class VideoHandler : IDisposable
     {
@@ -263,3 +264,4 @@
         }
     }
 }
+*/
